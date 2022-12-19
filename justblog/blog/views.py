@@ -1,12 +1,8 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.contrib.auth.decorators import login_required
-from django.utils.text import slugify
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm, PostForm
-from cloudinary.uploader import upload
-
+from .forms import CommentForm
 
 
 class PostList(generic.ListView):
@@ -82,19 +78,18 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-@login_required
-def create_post(request):
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            image_url = upload(request.FILES['featured_image'])['url']
-            post = form.save(commit=False)
-            post.author = request.user
-            post.status = 1
-            post.slug = slugify(post.title)
-            post.featured_image = image_url
-            post.save()
-            return redirect(reverse('post_detail', args=[post.slug]))
-    else:
-        form = PostForm()
-    return render(request, 'create_post.html', {'form': form})
+class CreatePost(View):
+
+    def create_post(request):
+        if request.method == 'POST':
+            form = PostForm(request.POST)
+            if form.is_valid():
+                # Create a new Post object using the form data
+                title = form.cleaned_data['title']
+                content = form.cleaned_data['content']
+                author = request.user  # set the author to the current user
+                post = Post.objects.create(title=title, content=content, author=author)
+                return redirect('post_detail', slug=post.slug)  # redirect to the post detail page
+        else:
+            form = PostForm()
+        return render(request, 'create_post.html', {'form': form})
