@@ -8,7 +8,6 @@ from .forms import CommentForm, PostForm
 from cloudinary.uploader import upload
 
 
-
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -84,14 +83,19 @@ class PostLike(View):
 
 @login_required
 def create_post(request):
+
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            image_url = upload(request.FILES['featured_image'])['url']
+            image_url = None
+            if 'featured_image' in request.FILES:
+                image_url = upload(request.FILES['featured_image'])['url']
+            else:
+                image_url = 'placeholder'
             post = form.save(commit=False)
             post.author = request.user
             post.status = 1
-            post.slug = slugify(post.title)
+            post.slug = slugify(post.title) 
             post.featured_image = image_url
             post.save()
             return redirect(reverse('post_detail', args=[post.slug]))
