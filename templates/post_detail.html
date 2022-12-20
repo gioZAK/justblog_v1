@@ -24,7 +24,6 @@
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
@@ -66,6 +65,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        {% if user.is_authenticated and user == post.author %}
+        <a href="{% url 'edit_post' post.slug %}">EDIT POST</a>
+        <a href="{% url 'delete_post' post.slug %}">DELETE POST</a>
+        {% endif %}
     </div>
     <div class="row">
         <div class="col">
