@@ -4,9 +4,11 @@
 
 <div class="container-fluid">
     <div class="row">
+        {% if user.is_authenticated %}
         <div class="btn-group">
             <a href="{% url 'create_post' %}" class="btn btn-primary">Create a new post</a>
         </div>
+        {% endif %}
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -14,18 +16,26 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <!-- source img "https://unsplash.com/it/foto/cckf4TsHAuw"-->
-                                <img class="card-img-top" src="../static/images/backupimage.jpg" style="height: 400px;"
-                                    alt="backup image of a laptop, coffe, notebook, mobile on a table">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" style="height: 400px;">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                            <a href="{% url 'post_detail' post.slug %}">
+                                <div class="image-container">
+                                    {% if "placeholder" in post.featured_image.url %}
+                                    <!-- source img "https://unsplash.com/it/foto/cckf4TsHAuw"-->
+                                    <img class="card-img-top "
+                                        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                        alt="backup image of a laptop, coffe, notebook, mobile on a table"
+                                        style="height: 400px;">
+                                    {% else %}
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                        style="height: 400px;">
+                                    {% endif %}
+                                    <a href="{% url 'profile' username=post.author.username %}" class="user-link">
+                                        <div class="image-flash">
+                                            <p class="author">Author: {{ post.author }}
+                                            </p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
+                            </a>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>

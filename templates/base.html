@@ -57,6 +57,9 @@
                     Your opinion matter!
                     {% endif %}
                 </span>
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile' username=user.username %}" class="btn btn-primary">View Profile</a>
+                {% endif %}
             </div>
         </div>
     </nav>

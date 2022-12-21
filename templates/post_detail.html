@@ -9,13 +9,15 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle"><a
+                        href="{% url 'profile' username=post.author.username %}">{{ post.author }}</a> |
+                    {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
                 <!-- source img "https://unsplash.com/it/foto/cckf4TsHAuw"-->
-                <img src="../static/images/backupimage.jpg"
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                     alt="backup image of a laptop, coffe, notebook, mobile on a table" width="100%">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" width="100%">
@@ -111,7 +113,7 @@
                 {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
+                <p>Posting as: <span class="text-success">{{ user.username }}</span></p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}

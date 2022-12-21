@@ -50,14 +50,24 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    left: -2px;
-    background-color: var(--primary-color);
+    left: -5px;
+    background-color: var(--light-s-color);
 }
 
 .author {
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 4px;
     text-transform: uppercase;
+}
+
+.user-link {
+    text-decoration: none;
+}
+
+.image-flash:hover,
+.author:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
 }
 
 .masthead {
