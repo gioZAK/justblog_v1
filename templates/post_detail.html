@@ -66,11 +66,13 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        {% if user.is_authenticated and user == post.author %}
-        <a href="{% url 'edit_post' post.slug %}">EDIT POST</a>
-        <a href="{% url 'delete_post' post.slug %}">DELETE POST</a>
-        {% endif %}
+    <div class="container d-flex justify-content-center align-center">
+        <div class="btn-group" role="group">
+            {% if user.is_authenticated and user == post.author %}
+            <a class="btn btn-primary" href="{% url 'edit_post' post.slug %}">EDIT POST</a>
+            <a class="btn btn-danger" href="{% url 'delete_post' post.slug %}">DELETE POST</a>
+            {% endif %}
+        </div>
     </div>
     <div class="row">
         <div class="col">
@@ -113,7 +115,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-all btn-lg mt-2">Submit</button>
                 </form>
                 {% endif %}
                 {% endif %}
