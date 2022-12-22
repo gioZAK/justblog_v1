@@ -43,6 +43,11 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link bold" href="{% url 'profile' username=user.username %}">
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link bold" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
@@ -54,16 +59,21 @@
                     </li>
                     {% endif %}
                 </ul>
-                <span class="font-weight-bold text-lg">
+                <div class="font-weight-bold text-lg mr-5">
                     {% if user.is_authenticated %}
-                    Welcome : <span class="text-success">{{ user.username }}</span>
-                    {% else %}
-                    Your opinion matter!
-                    {% endif %}
-                </span>
-                {% if user.is_authenticated %}
-                <a href="{% url 'profile' username=user.username %}" class="btn btn-primary">View Profile</a>
-                {% endif %}
+                    <div class="navbar-nav">
+                        <div class="nav-item d-flex align-items-center">
+                            <span class="mr-2">Welcome, </span>
+                            <span class="text-success mx-2">{{ user.username }}</span>
+                        </div>
+                    </div>
+                    <span>
+                        {% else %}
+                        Your opinion matter!
+                        {% endif %}
+                    </span>
+
+                </div>
             </div>
         </div>
     </nav>

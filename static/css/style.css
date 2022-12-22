@@ -50,24 +50,14 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    left: -5px;
-    background-color: var(--light-s-color);
+    left: -2px;
+    background-color: var(--primary-color);
 }
 
 .author {
-    color: rgb(0, 0, 0);
+    color: white;
     margin: 4px;
     text-transform: uppercase;
-}
-
-.user-link {
-    text-decoration: none;
-}
-
-.image-flash:hover,
-.author:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color);
 }
 
 .masthead {
@@ -124,7 +114,6 @@ body {
     color: lightgray;
 }
 
-
 .btn-all {
     background-color: var(--primary-color);
     color: var(--light-s-color);
@@ -145,6 +134,11 @@ body {
 .link:active {
     color: var(--secondary-color);
     text-decoration: underline;
+}
+
+.no-link-style {
+    color: inherit;
+    text-decoration: none;
 }
 
 .btn-like {
