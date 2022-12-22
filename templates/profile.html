@@ -36,6 +36,9 @@
             </div>
         </div>
     </div>
+    {% if is_owner %}
+    <a href="/account/delete/" class="btn btn-danger mt-3">Delete Account</a>
+    {% endif %}
 </div>
 
 {% endblock %}

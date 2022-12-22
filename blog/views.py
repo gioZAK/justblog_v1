@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.utils.text import slugify
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from cloudinary.uploader import upload
 
@@ -96,7 +97,7 @@ def create_post(request):
             post = form.save(commit=False)
             post.author = request.user
             post.status = 1
-            post.slug = slugify(post.title) 
+            post.slug = slugify(post.title)
             post.featured_image = image_url
             post.save()
             return redirect(reverse('post_detail', args=[post.slug]))
@@ -142,8 +143,33 @@ def delete_post(request, slug):
         return redirect('home')
     return render(request, 'delete_post.html', {'post': post})
 
+
 @login_required
 def profile(request, username):
+    # Get the user whose profile is being viewed
     user = get_object_or_404(User, username=username)
     posts = Post.objects.filter(author=user)
-    return render(request, 'profile.html', {'user': user, 'posts': posts})
+    # Check if the logged-in user is the owner of the profile
+    is_owner = request.user == user
+    return render(request, 'profile.html', {'user': user, 'posts': posts,
+                                            'is_owner': is_owner})
+
+
+@login_required
+def delete_account(request):
+    if request.method == 'POST':
+        # Handle form submission
+        username = request.POST['username']
+        # Get the user object
+        user = User.objects.get(username=username)
+        # Delete the user's account
+        User.objects.filter(username=username).delete()
+        # Delete the user's comments
+        Comment.objects.filter(name=username).delete()
+        # Display a success message
+        messages.success(request, f'Account "{username}" was deleted.')
+        # Redirect to a home page
+        return redirect('home')
+    else:
+        # Render the delete account template
+        return render(request, 'delete_account.html')
