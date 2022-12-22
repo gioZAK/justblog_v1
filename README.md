@@ -9,13 +9,11 @@
 
 # Table of contents
 1. [Agile Workflow](#agile-workflow)
-2. [Owner/Admin Stories](#owner/admin-stories)
+2. [Owner Admin Stories](#owner-admin-stories)
 3. [User Stories](#user-stories)
 4. [Structure](#structure)
 5. [Features](#features)
-
-6. [Technologies Used](#technologies-used)
-    
+6. [Technologies Used](#technologies-used)    
 7. [Validation](#validation)
 8. [Testing](#testing)
 9. [Deployment](#deployment)
@@ -24,9 +22,8 @@
 ## Agile Workflow
 
 
-[Back to Table of contents](#table-of-contents)
 
-## Owner/admin Stories
+## Owner Admin Stories
 
 
 
@@ -37,17 +34,16 @@
 
 
 ## Features
-#### User Features
+### User Features
 
 
-#### Owner/Admin Features
+### Owner/Admin Features
 
 
-## Future Features
+### Future Features
 
 
 
- [Back to Table of contents](#table-of-contents)
 ## Technologies Used
 
 ### Main Tech
@@ -61,7 +57,7 @@
 
 
 
-[Back to Table of contents](#table-of-contents)
+
 
 ## Validation
 
@@ -78,22 +74,22 @@
 
 
 
- [Back to Table of contents](#table-of-contents)
+
 
 ## Credits
 
-#### Content
+### Content
 
 
-#### Media
+### Media
 
 
-[Back to Table of contents](#table-of-contents)
+
 
 ## Screenshots
 
 
-### Contact 
-![]
+## Contact 
+
 
 [Back to Table of contents](#table-of-contents)

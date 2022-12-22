@@ -42,11 +42,9 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link bold" href="{% url 'profile' username=user.username %}">
-                            Profile
-                        </a>
-                    </li>
+                    <a class="nav-link bold" href="{% url 'profile' username=request.user.username %}">
+                        Profile
+                    </a>
                     <li class="nav-item">
                         <a class="nav-link bold" href="{% url 'account_logout' %}">Logout</a>
                     </li>
@@ -64,7 +62,7 @@
                     <div class="navbar-nav">
                         <div class="nav-item d-flex align-items-center">
                             <span class="mr-2">Welcome, </span>
-                            <span class="text-success mx-2">{{ user.username }}</span>
+                            <span class="text-success mx-2">{{ request.user.username }}</span>
                         </div>
                     </div>
                     <span>
