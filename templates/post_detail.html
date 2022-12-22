@@ -63,10 +63,9 @@
                         {% endwith %}
                     </div>
                     <!-- Invitation to view the post owner's profile-->
-                    <div>
-                        <p>Check out <a href="{% url 'profile' username=post.author.username %}"
-                                target="_blank">{{ post.author }}'s
-                                profile</a>
+                    <div class="mt-2">
+                        <p>Check out <a href="{% url 'profile' username=post.author.username %}">
+                                {{ post.author }}'s profile</a>
                         </p>
                     </div>
                 </div>
