@@ -1,9 +1,10 @@
 :root {
-    --light-color: #F9FAFC;
+    --light-color: #fafafa;
     --light-s-color: #fff;
-    --primary-color: #253db3;
-    --secondary-color: #313942;
-    --tertiary-color: #E84610;
+    --blue-color: #0004ff;
+    --dark-color: #000000;
+    --accent-color: #fb0202;
+
 }
 
 body {
@@ -14,11 +15,11 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: var(--dark-color);
 }
 
-.red-just {
-    color: var(--tertiary-color);
+.accent-just {
+    color: var(--accent-color);
 }
 
 .bold {
@@ -30,7 +31,7 @@ body {
 }
 
 .dark-bg {
-    background-color: var(--secondary-color);
+    background-color: var(--dark-color);
 }
 
 .main-bg {
@@ -46,62 +47,36 @@ body {
     position: relative;
 }
 
+.all-img {
+    object-fit: cover;
+    height: 25em;
+    background: center;
+}
+
+
 .image-flash {
     position: absolute;
-    bottom: 5%;
+    bottom: 80%;
     min-width: 30%;
     left: -2px;
-    background-color: var(--primary-color);
+    background-color: var(--blue-color);
 }
 
 .author {
-    color: white;
+    color: var(--light-s-color);
     margin: 4px;
     text-transform: uppercase;
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: var(--secondary-color);
-    color: var(--light-s-color);
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: var(--secondary-color);
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
 
 .post-link {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--dark-color);
 }
 
 .post-link:hover,
 .page-link {
-    color: var(--tertiary-color);
+    color: var(--accent-color);
 }
 
 .post-title {
@@ -111,30 +86,20 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: var(--light-s-color);
 }
 
 .btn-all {
-    background-color: var(--primary-color);
+    background-color: var(--blue-color);
     color: var(--light-s-color);
 }
 
 .btn-all:hover,
 .btn-all:active {
     background-color: var(--light-s-color);
-    color: var(--primary-color)
+    color: var(--blue-color)
 }
 
-.link {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
 
 .no-link-style {
     color: inherit;
@@ -142,14 +107,14 @@ body {
 }
 
 .btn-like {
-    color: var(--tertiary-color);
+    color: var(--accent-color);
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: var(--tertiary-color);
+    color: var(--accent-color);
     background: transparent;
     border: none;
 }
