@@ -1,5 +1,3 @@
-
-from django.views.generic import CreateView, UpdateView, DeleteView, TemplateView
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,10 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.utils.text import slugify
 from django.views import generic, View
-from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
-from cloudinary.uploader import upload
 
 
 class PostList(generic.ListView):
@@ -20,27 +16,18 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-class PostDetail(View):
+class PostDetail(generic.DetailView):
+    model = Post
+    template_name = 'post_detail.html'
+    queryset = Post.objects.filter(status=1)
 
-    def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
-
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": CommentForm()
-            },
-        )
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comments'] = self.object.comments.filter(approved=True).order_by("-created_on")
+        context['commented'] = False
+        context['liked'] = self.object.likes.filter(id=self.request.user.id).exists()
+        context['comment_form'] = CommentForm()
+        return context
 
     def post(self, request, slug, *args, **kwargs):
 
@@ -74,19 +61,20 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
+class PostLike(generic.RedirectView):
+    permanent = False
+    query_string = True
 
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
+    def get_redirect_url(self, *args, **kwargs):
+        post = get_object_or_404(Post, slug=kwargs['slug'])
+        if post.likes.filter(id=self.request.user.id).exists():
+            post.likes.remove(self.request.user)
         else:
-            post.likes.add(request.user)
+            post.likes.add(self.request.user)
+        return reverse('post_detail', kwargs={'slug': post.slug})
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-
-class PostCreateView(CreateView):
+class PostCreateView(generic.CreateView):
     model = Post
     form_class = PostForm
     template_name = 'create_post.html'
@@ -108,7 +96,7 @@ class PostCreateView(CreateView):
         return reverse('post_detail', args=[slug])
 
 
-class PostEditView(UpdateView):
+class PostEditView(generic.UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'edit_post.html'
@@ -123,7 +111,7 @@ class PostEditView(UpdateView):
         return response
 
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(generic.DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
@@ -135,7 +123,7 @@ class PostDeleteView(DeleteView):
         return response
 
 
-class ProfileView(TemplateView):
+class ProfileView(generic.TemplateView):
     template_name = 'profile.html'
 
     def get_context_data(self, **kwargs):
@@ -149,7 +137,7 @@ class ProfileView(TemplateView):
         return context
 
 
-class DeleteAccountView(LoginRequiredMixin, TemplateView):
+class DeleteAccountView(LoginRequiredMixin, generic.TemplateView):
     template_name = 'delete_account.html'
 
     def post(self, request, *args, **kwargs):
