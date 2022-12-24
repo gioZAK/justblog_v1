@@ -15,7 +15,7 @@
             <h1 class="text-center">{{ user.username }}</h1>
             <!--User Image-->
             <div class="d-flex justify-content-center">
-                {% if "placeholder" in user.profile.profile_picture.url %}
+                {% if  "placeholder" in user.profile.profile_picture.url %}
                 <img src="https://res.cloudinary.com/df6eqqbys/image/upload/v1671873081/w9pr6prqxch8piudggrp.png"
                     alt="Default Profile picture" class="img-fluid rounded-circle">
                 {% else %}

@@ -62,12 +62,13 @@ class EditProfileView(View):
         # Check if the logged-in user is the owner of the profile
         if request.user != user:
             # If the logged-in user is not the owner, display an error message
-            messages.error(request, 'You are not allowed to edit this profile.')
+            messages.error(request, 'You are not allowed.')
             # Redirect the user back to the home page
             return redirect('home')
 
         form = ProfileForm(instance=user.profile)
-        return render(request, 'edit_profile.html', {'form': form, 'username': username})
+        return render(request, 'edit_profile.html', {'form': form,
+                                                     'username': username})
 
     def post(self, request, username):
         # Get the user object
