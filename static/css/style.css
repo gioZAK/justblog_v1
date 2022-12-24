@@ -78,6 +78,11 @@ body {
     color: var(--light-s-color);
 }
 
+.btn {
+    width: 200px;
+    height: 50px;
+}
+
 .btn-all {
     background-color: var(--blue-color);
     color: var(--light-s-color);
