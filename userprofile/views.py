@@ -4,17 +4,19 @@ from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth.models import User
-from blog.models import Post
+from blog.models import Post, Comment
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import Profile
 from django.contrib import messages
 
 
+# Receiver created in order to create a profile for the user after register
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
 
 class ProfileView(generic.TemplateView):
     template_name = 'profile.html'
@@ -52,23 +54,27 @@ class DeleteAccountView(LoginRequiredMixin, generic.TemplateView):
         return redirect('home')
 
 
-def edit_profile(request, username):
-    # Get the user object
-    user = get_object_or_404(User, username=username)
+class EditProfileView(View):
+    def get(self, request, username):
+        # Get the user object
+        user = get_object_or_404(User, username=username)
 
-    # Check if the logged-in user is the owner of the profile
-    if request.user != user:
-        # If the logged-in user is not the owner, display an error message
-        messages.error(request, 'You are not allowed to edit this profile.')
-        # Redirect the user back to the home page
-        return redirect('home')
+        # Check if the logged-in user is the owner of the profile
+        if request.user != user:
+            # If the logged-in user is not the owner, display an error message
+            messages.error(request, 'You are not allowed to edit this profile.')
+            # Redirect the user back to the home page
+            return redirect('home')
 
-    # If the logged-in user is the owner, proceed with the form submission
-    if request.method == 'POST':
+        form = ProfileForm(instance=user.profile)
+        return render(request, 'edit_profile.html', {'form': form, 'username': username})
+
+    def post(self, request, username):
+        # Get the user object
+        user = get_object_or_404(User, username=username)
+
         form = ProfileForm(request.POST, request.FILES, instance=user.profile)
         if form.is_valid():
             form.save()
-            return redirect('home')
-    else:
-        form = ProfileForm(instance=user.profile)
-    return render(request, 'edit_profile.html', {'form': form, 'username': username})
+            messages.success(request, 'Your profile was updated successfully!')
+            return redirect(reverse('profile', args=[username]))

@@ -12,8 +12,7 @@ class Profile(models.Model):
         ]
     )
     bio = models.TextField(max_length=500, blank=True)
-    real_name = models.CharField(max_length=30, blank=True)
-    dob = models.DateField(null=True, blank=True)
+
 
     def __str__(self):
         return self.user.username
