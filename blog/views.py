@@ -1,5 +1,8 @@
+
+from django.views.generic import CreateView, UpdateView, DeleteView, TemplateView
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.utils.text import slugify
@@ -83,81 +86,73 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-@login_required
-def create_post(request):
+class PostCreateView(CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'create_post.html'
 
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            image_url = None
-            if 'featured_image' in request.FILES:
-                image_url = upload(request.FILES['featured_image'])['url']
-            else:
-                image_url = 'placeholder'
-            post = form.save(commit=False)
-            post.author = request.user
-            post.status = 1
-            post.slug = slugify(post.title)
-            post.featured_image = image_url
-            post.save()
-            return redirect(reverse('post_detail', args=[post.slug]))
-    else:
-        form = PostForm()
-    return render(request, 'create_post.html', {'form': form})
+    def form_valid(self, form):
+        # Set the author and status of the post
+        form.instance.author = self.request.user
+        form.instance.status = 1
+        form.instance.slug = slugify(form.instance.title)
+        # Save the post and redirect to the success URL
+        response = super().form_valid(form)
+        messages.success(self.request, f'Post "{form.instance}" created successfully')
+        return response
 
-
-@login_required
-def edit_post(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    # Only allow the post's author to edit the post
-    if request.user != post.author:
-        return HttpResponseForbidden()
-
-    if request.method == 'POST':
-        form = PostForm(request.POST, instance=post)
-        if form.is_valid():
-            image_url = post.featured_image
-            if 'featured_image' in request.FILES:
-                image_url = upload(request.FILES['featured_image'])['url']
-            post = form.save(commit=False)
-            post.author = request.user
-            post.status = 1
-            post.slug = slugify(post.title)
-            post.featured_image = image_url
-            post.save()
-            return redirect(reverse('post_detail', args=[post.slug]))
-    else:
-        form = PostForm(instance=post)
-    return render(request, 'edit_post.html', {'form': form, 'post': post})
+    def get_success_url(self):
+        # Get the slug of the post that was just created
+        slug = self.object.slug
+        # Return the post detail page URL for the post with the given slug
+        return reverse('post_detail', args=[slug])
 
 
-@login_required
-def delete_post(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    # Only allow the post's author to delete the post
-    if request.user != post.author:
-        return HttpResponseForbidden()
+class PostEditView(UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'edit_post.html'
 
-    if request.method == 'POST':
-        post.delete()
-        return redirect('home')
-    return render(request, 'delete_post.html', {'post': post})
+    def get_success_url(self):
+        return reverse('post_detail', args=[self.object.slug])
 
-
-@login_required
-def profile(request, username):
-    # Get the user whose profile is being viewed
-    user = get_object_or_404(User, username=username)
-    posts = Post.objects.filter(author=user)
-    # Check if the logged-in user is the owner of the profile
-    is_owner = request.user == user
-    return render(request, 'profile.html', {'user': user, 'posts': posts,
-                                            'is_owner': is_owner})
+    def form_valid(self, form):
+        # Save the post and redirect to the post detail page
+        response = super().form_valid(form)
+        messages.success(self.request, f'Post "{form.instance}" updated successfully')
+        return response
 
 
-@login_required
-def delete_account(request):
-    if request.method == 'POST':
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')
+
+    def delete(self, request, *args, **kwargs):
+        # Delete the post and redirect to the home page
+        response = super().delete(request, *args, **kwargs)
+        messages.success(request, f'Post "{self.object}" deleted successfully')
+        return response
+
+
+class ProfileView(TemplateView):
+    template_name = 'profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Get the user whose profile is being viewed
+        user = get_object_or_404(User, username=self.kwargs['username'])
+        context['user'] = user
+        context['posts'] = Post.objects.filter(author=user)
+        # Check if the logged-in user is the owner of the profile
+        context['is_owner'] = self.request.user == user
+        return context
+
+
+class DeleteAccountView(LoginRequiredMixin, TemplateView):
+    template_name = 'delete_account.html'
+
+    def post(self, request, *args, **kwargs):
         # Handle form submission
         username = request.POST['username']
         # Get the user object
@@ -170,6 +165,3 @@ def delete_account(request):
         messages.success(request, f'Account "{username}" was deleted.')
         # Redirect to a home page
         return redirect('home')
-    else:
-        # Render the delete account template
-        return render(request, 'delete_account.html')
