@@ -16,6 +16,24 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body p-4 shadow-sm bg-white rounded">
+                            <div>
+                                <a href="{% url 'profile' username=post.author.username %}" class="no-link-style">
+                                    <div class="image-flash text-center">
+                                        <div class="pt-2">
+                                            {% if "placeholder" in post.author.profile.profile_picture.url %}
+                                            <!-- Display a default image -->
+                                            <img src="https://res.cloudinary.com/df6eqqbys/image/upload/v1671873081/w9pr6prqxch8piudggrp.png"
+                                                alt="Default image" class="img-fluid rounded-circle" width="30">
+                                            {% else %}
+                                            <!-- Display the author's image -->
+                                            <img src="{{ post.author.profile.profile_picture.url }}"
+                                                alt="Profile picture" class="img-fluid rounded-circle" width="30">
+                                            {% endif %}
+                                        </div>
+                                        <p class="author text-truncate text-center">{{ post.author }}</p>
+                                    </div>
+                                </a>
+                            </div>
                             <a href="{% url 'post_detail' post.slug %}" class=" no-link-style">
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
@@ -24,14 +42,13 @@
                                         src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                                         alt="backup image of a laptop, coffe, notebook, mobile on a table">
                                     {% else %}
+                                    <!-- Display the blog post image -->
                                     <img class="card-img-top index-img" src=" {{ post.featured_image.url }}"
                                         alt="Image sent by post owner">
                                     {% endif %}
-                                    <div class="image-flash">
-                                        <p class="author text-truncate">Author: {{ post.author }}</p>
-                                    </div>
+
                                 </div>
-                                <div class="post-link">
+                                <div class=" post-link">
                                     <h2 class="card-title">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </div>
