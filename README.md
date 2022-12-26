@@ -17,10 +17,9 @@ A blog website, created as project to apply and display my current knowledge of 
 4. [Structure](#structure)
 5. [Features](#features)
 6. [Technologies Used](#technologies-used)    
-7. [Validation](#validation)
 8. [Testing](#testing)
-9. [Deployment](#deployment)
-10. [Credits](#credits)
+8. [Deployment](#deployment)
+9. [Credits](#credits)
 
 ## Design
 
@@ -176,14 +175,15 @@ You can acess the Kanban board that was used during the project development [her
     - Used to host all images.
 - Django AllAuth
     - Used to deal with user account registration.
+- Chrome DevTool
+    - Used to debug and test new styles.
+- ChatGTP
+    - Used to debug.
 
 
-
-
-
-
-## Validation
-
+## Testing
+- I have used automated test and manual testing to check if all the website's functionalities were working as intended.
+    -They all passed.
 
 ### Python Testing
 - I have tested all python files and they all passed
@@ -206,8 +206,11 @@ You can acess the Kanban board that was used during the project development [her
 - Tested with [Validator.w3](https://validator.w3.org/nu/#textarea)
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/testing/htmltest.png">
 
+### LightHouse
+- I have tested the all webpages with LightHouse and they all exceeded with good scores
+<img src="https://github.com/gioZAK/justblog_v1/blob/c54571c2a8efe681addf5f4a9e9aead32a888584/docs/screenshots/lighthouseimg.png">
 
-## Testing
+### Manual Testing
  
 
 
