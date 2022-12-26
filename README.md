@@ -120,6 +120,7 @@ You can acess the Kanban board that was used during the project development [her
     - Comment field and the posted comments
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/postimg.png">
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/postimg.png">
 
 ### Profile
 - Content:
@@ -135,7 +136,7 @@ You can acess the Kanban board that was used during the project development [her
     - Welcome user status, which tells which username is logged in.
 
     <img src="">
-    
+
 ### Future Features
 
 - Search bar
