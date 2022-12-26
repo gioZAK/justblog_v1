@@ -151,9 +151,10 @@ You can acess the Kanban board that was used during the project development [her
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/testing/testblogview.png">
 
 ### JavaScript Testing
-- I have tested the script.js file and it passed with no major error.
+- I have tested the script.js and it passed with no major error.
+- The undefined variable is not a glitch.
 - Tested with [JSHint](https://jshint.com/)
-<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/testing/jstest.png">
+<img src="https://github.com/gioZAK/justblog_v1/blob/f4041e03caf785922b34513733c03cf422969b69/docs/testing/jshint.png">
 
 ### CSS Testing
 - I have tested the script.css file and it passed.
