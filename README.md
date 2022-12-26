@@ -23,7 +23,7 @@ A blog website, created as project to apply and display my current knowledge of 
 
 ## Design
 
-The main idea was to develop a website with a simple design which would not distract the user, the color scheme used allows a good contrats.
+The main idea was to develop a website with a simple design which would not distract the user, the color scheme used allows a good contrast.
 
 ### Colors
 
@@ -93,10 +93,10 @@ Only the comments require aprove so insults can be avoided.
 This project was created using Agile techniques during development, such as:
 
 - User stories: displayed using GitHub Issues.
-- MoSCoW method: by adding tags to each issue.
+- MoSCoW method: by adding a priority to each issue and display it using tags.
 - ToDo, In Progress and Done: using the GitHub Kanban board.
 
-You can acess the Kanban board that was used during the project development [here](https://github.com/users/gioZAK/projects/10/views/1).
+You can access the Kanban board that was used during the project development [here](https://github.com/users/gioZAK/projects/10/views/1).
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/befb8792d84f802ab5ff00067eb2213b2a3d7b03/docs/screenshots/kanban.png">
 
@@ -218,10 +218,26 @@ You can acess the Kanban board that was used during the project development [her
 
 ## Deployment
 
+### Forking
 
+- In order to Fork this repository:
 
+    1. Access your GitHub account and find the relevant repository.
+    2. Click on 'Fork' on the top right of the page.
+    3. You will find a copy of the repository in your own Github account.
 
+### Clone
 
+- In order to Clone this repository:
+
+    1. Create repository where you will work with this clone.
+    2. Copy "https://github.com/gioZAK/justblog.git".
+    3. Run the directory you want the clone to be.
+    6. In your IDE's terminal type 'git clone' and the paste the URL you just copied.
+    7. Press Enter.
+    8. You now have a local clone.
+
+### Heroku 
 
 
 ## Credits
