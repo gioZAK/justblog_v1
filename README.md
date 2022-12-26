@@ -72,6 +72,21 @@ Wireframe Post/Edit/Profile
 
 ## UX
 
+The blog objective is to be accessible to everyone, anyone can create an account and post there, there is no fixed topic, any content is accepted.
+Only the comments require aprove so insults can be avoided.
+
+### Site User Goal
+
+- Read new content posted by someone.
+- Read other user comments related to a post.
+- Post and Comment in the website to express himself.
+
+### Site Goal
+
+- Provide a platform where people can express themselves.
+- Moderate unwanted comments or if needed delete a post.
+- Provide entertainment.
+
 ## Agile Workflow
 
 This project was created using Agile techniques during development, such as:
