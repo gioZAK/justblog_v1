@@ -165,9 +165,5 @@ https://pep8ci.herokuapp.com/ Python
 
 
 
-## Screenshots
-
-
-
 
 [Back to Table of contents](#table-of-contents)
