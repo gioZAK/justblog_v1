@@ -54,17 +54,20 @@ Wireframe Home
 <summary>
 Wireframe Blog Post
 </summary>
-(https://github.com/gioZAK/justblog_v1/blob/877e87b738533609b4573be0e7ec50a93b608b65/docs/wireframes/wireframesblogpost.png)
+<img src="https://github.com/gioZAK/justblog_v1/blob/877e87b738533609b4573be0e7ec50a93b608b65/docs/wireframes/wireframesblogpost.png">
 </details>
 <details>
 <summary>
 Wireframe Profile
 </summary>
 </details>
+<img src="https://github.com/gioZAK/justblog_v1/blob/12b74f02a971a523264797465a0fb4cd9d540569/docs/wireframes/wireframesuserprofile.png">
+
 <details>
 <summary>
 Wireframe Post/Edit/Profile
 </summary>
+<img src="https://github.com/gioZAK/justblog_v1/blob/12b74f02a971a523264797465a0fb4cd9d540569/docs/wireframes/wireframespostedit.png">
 </details>
 </details>
 
