@@ -102,10 +102,6 @@ You can acess the Kanban board that was used during the project development [her
 <img src="https://github.com/gioZAK/justblog_v1/blob/befb8792d84f802ab5ff00067eb2213b2a3d7b03/docs/screenshots/kanban.png">
 
 
-
-## Structure
-
-
 ## Features
 
 ### Home page
@@ -137,6 +133,26 @@ You can acess the Kanban board that was used during the project development [her
 
 
 ### Applications, Libraries and Platforms
+
+- Git
+    - Used for version control to commit to Git and Push to GitHub.
+- Gitpod
+    - Used as the IDE to write all the code used in this project.
+- Github
+    - GitHub is used to store the projects code after being pushed from Git.
+- Heroku
+    - Used to deploy the application.
+- Google Fonts
+    - Used to import the fonts Roboto and Lato.
+- FontAwesome
+    - Used to import the ThumbsUp and Comment icon.
+- Balsamiq Wireframes
+    - Used to create the project's wireframe.
+- Cloudinary
+    - Used to host all images.
+- Django AllAuth
+    - Used to deal with user account registration.
+
 
 
 
@@ -184,7 +200,7 @@ You can acess the Kanban board that was used during the project development [her
 ## Credits
 
 ### Code Institute
-- I have realied on the Code Institute Django Blog Walktrough project in order to make my own.
+- I have relied on the Code Institute Django Blog Walktrough project in order to make my own.
 
 ### Corey Schafer
 - [Corey Schafer Django Course](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
@@ -195,7 +211,7 @@ You can acess the Kanban board that was used during the project development [her
 ### ChatGPT
 - I have used [ChatGPT](https://chat.openai.com/chat) as a tool to debug and to guide me on how to apply new functionalities.
 
-### Unslapsh
+### Unsplash
 - I have taken the images for the blog post from [Unsplash](https://unsplash.com/)
 
 [Back to Table of contents](#table-of-contents)
