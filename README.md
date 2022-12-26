@@ -48,6 +48,7 @@ Wireframe
 <summary>
 Wireframe Home
 </summary>
+<img src="https://github.com/gioZAK/justblog_v1/blob/e35d49ae59977c2161793588133778f4262a8ec2/docs/wireframes/wireframeshome.png">
 </details>
 <details>
 <summary>
