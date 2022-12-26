@@ -100,6 +100,8 @@ You can access the Kanban board that was used during the project development [he
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/befb8792d84f802ab5ff00067eb2213b2a3d7b03/docs/screenshots/kanban.png">
 
+### User Stories
+- As a user I can blablabla
 
 ## Features
 
