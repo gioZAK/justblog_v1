@@ -54,6 +54,7 @@ Wireframe Home
 <summary>
 Wireframe Blog Post
 </summary>
+(https://github.com/gioZAK/justblog_v1/blob/877e87b738533609b4573be0e7ec50a93b608b65/docs/wireframes/wireframesblogpost.png)
 </details>
 <details>
 <summary>
