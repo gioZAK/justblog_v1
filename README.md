@@ -355,11 +355,10 @@ You can access the Kanban board that was used during the project development [he
 - Steps: 
     1. Click on the "Profile" Button on the NavBar.
     2. Click on the "Change Password" Button.
-    3. User clicks on the button.
-    4. User is redirected to Change Password form.
-    5. Fill up the correct information.
-    6. Submit Changes.
-    8. User is redirected to his profile page.
+    3. User is redirected to Change Password form.
+    4. Fill up the correct information.
+    5. Submit Changes.
+    6. User is redirected to his profile page.
     7. Success message is displayed and his password is now changed.
 
 - Outcome:
@@ -371,13 +370,11 @@ You can access the Kanban board that was used during the project development [he
 
 - Steps: 
     1. Click on the "Profile" Button on the NavBar.
-    2. Click on the "Change Password" Button.
-    3. User clicks on the button.
-    4. User is redirected to Change Password form.
-    5. Fill up the correct information.
-    6. Submit Changes.
-    8. User is redirected to his profile page.
-    7. Success message is displayed and his password is now changed.
+    2. Click on the "Delete Account" Button.
+    4. User is to a new page asking if he wants to delete his account.
+    5. Click on the Delete Button.
+    6. User is now redirected to the home page.
+    7. Success message is displayed and this user no longer exist in the database and his post and comments were deleted too.
 
 - Outcome:
     - Pass.
