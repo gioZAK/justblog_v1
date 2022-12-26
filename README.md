@@ -213,9 +213,174 @@ You can access the Kanban board that was used during the project development [he
 <img src="https://github.com/gioZAK/justblog_v1/blob/c54571c2a8efe681addf5f4a9e9aead32a888584/docs/screenshots/lighthouseimg.png">
 
 ### Manual Testing
- 
+ - Here is the sequence of manual test I have applied to check if all applications work.
 
+#### As a user I want to register.
+- Steps: 
+    1. Click on the REGISTER button in the NavBar.
+    2. The Sign Up form is displayed.
+    3. User Fill Up the form and press Sign Up.
+    4. Success message is displayed and user is now logged in.
 
+- Outcome:
+    - Pass.
+
+#### As a user I want to Logout.
+- Requirements:
+    - User is logged in.
+
+- Steps: 
+    1. Click on the Logout button in the NavBar
+    2. Click Sign Out.
+    3. User will be redirected to the home page and a success message is displayed.
+        - User is now Logged out from the blog.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to Create a Blog Post.
+- Requirements:
+    - User is logged in.
+
+- Steps: 
+    1. Click on the "Create a new post" button, which is only displayed after the user is logged in.
+    2. Fill up the Title and Content, the Excerpt is not mandatory.
+    3. Press the "Create" Button
+    3. User is redirected to a new page with the post content and a success message is displayed.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to Edit my Blog Post.
+- Requirements:
+    - User is logged in.
+    - Have a post created.
+    - Go to the post page.
+    - Be the author of that page.
+
+- Steps: 
+    1. Go to the post page that you want to edit.
+    2. Scroll down and you will see a "Edit Post" button.
+    3. Click on the button.
+    4. User is redirected to a form which contains the information he posted in the "Create a Blog Post"
+    5. User submit the edition by clicking the "Submit Changes" Button.
+    6. User is redirected to the post page he just eddited and a success message is displayed.
+
+- Outcome:
+    - Pass.
+
+#### As a user I to Delete my Blog Post.
+- Requirements:
+    - User is logged in.
+    - Have a post created.
+    - Go to the post page.
+    - Be the author of that page.
+
+- Steps: 
+    1. Go to the post page that you want to delete.
+    2. Scroll down and you will see a "Delete Post" button.
+    3. Click on the button.
+    4. User is redirected to a page that ask if he is sure that he wants to delete the post.
+    5. User clicks on the "Delete" Button
+    6. User is redirected to home page and a success message is displayed.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to Comment on a Post.
+- Requirements:
+    - User is logged in.
+
+- Steps: 
+    1. Go to the post that he wants to comment.
+    2. Scroll down and on the right side there is a Leave a comment field.
+    3. User writes his comment and press the submit button
+    4. A message of "Your comment is awaiting approval" appears.
+    5. After the admin reads the message he can chose to approve or not.
+    6. If approved image is displayed on the Comments field.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to Like a Post.
+- Requirements:
+    - User is logged in.
+
+- Steps: 
+    1. Go to the post that he wants to like.
+    2. Scroll down and under the post content there is a like button.
+    3. User clicks on the button.
+    4. The page reloads.
+    5. The like button is now solid red and the like count increases by one.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to unlike a Post.
+- Requirements:
+    - User is logged in.
+    - Have liked the post before
+
+- Steps: 
+    1. Go to the post that he wants to unlike.
+    2. Scroll down and under the post content there is a solid red like button.
+    3. User clicks on the button.
+    4. The page reloads.
+    5. The like button is now grey and empty and the like count decreases by one.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to edit my Profile
+- Requirements:
+    - User is logged in.
+    
+- Steps: 
+    1. Click on the "Profile" Button on the NavBar.
+    2. Click on the "Edit Profile" Button.
+    3. User is redirected to a Edit Profile form.
+    4. The user now can update his Bio and Upload a picture.
+    5. Submit Changes.
+    6. User is redirected to his profile page.
+    7. Success message is displayed and changes were made.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to change my password Profile
+- Requirements:
+    - User is logged in.
+    - Remember current password.
+
+- Steps: 
+    1. Click on the "Profile" Button on the NavBar.
+    2. Click on the "Change Password" Button.
+    3. User clicks on the button.
+    4. User is redirected to Change Password form.
+    5. Fill up the correct information.
+    6. Submit Changes.
+    8. User is redirected to his profile page.
+    7. Success message is displayed and his password is now changed.
+
+- Outcome:
+    - Pass.
+
+#### As a user I want to delete my account.
+- Requirements:
+    - User is logged in.
+
+- Steps: 
+    1. Click on the "Profile" Button on the NavBar.
+    2. Click on the "Change Password" Button.
+    3. User clicks on the button.
+    4. User is redirected to Change Password form.
+    5. Fill up the correct information.
+    6. Submit Changes.
+    8. User is redirected to his profile page.
+    7. Success message is displayed and his password is now changed.
+
+- Outcome:
+    - Pass.
 
 
 ## Deployment
@@ -259,9 +424,6 @@ You can access the Kanban board that was used during the project development [he
 ### Follow the instructions here.
 - Further instructions can be follow from [here](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
     - All credits to Code Institute.
-
-
-
 
 
 ## Credits
