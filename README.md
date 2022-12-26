@@ -219,6 +219,10 @@ You can access the Kanban board that was used during the project development [he
 
 
 ## Deployment
+- In order to Deploy this project:
+    1. Either fork or clone this project.
+    2. Heroku setup.
+    3. Follow the [link](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit) to set up your ide. Credit do Code Institute
 
 ### Forking
 
@@ -239,7 +243,25 @@ You can access the Kanban board that was used during the project development [he
     7. Press Enter.
     8. You now have a local clone.
 
-### Heroku 
+### Heroku.
+-To setup with Heroku:
+
+   1. Create an account at heroku.com
+   2. Create a new app, add app name and your region
+   3. Click on create app
+   4. Go to "Settings"
+   5. Under Config Vars, add your sensitive data (creds.json for example)
+   6. Now go to your IDE and connect your enviroment with heroku
+   7. heroku login -i
+   8. Then run the following command: heroku git:remote -a your_app_name_here
+   9. Finally: git push heroku main
+
+### Follow the instructions here.
+- Further instructions can be follow from [here](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
+    - All credits to Code Institute.
+
+
+
 
 
 ## Credits
