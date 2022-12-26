@@ -105,23 +105,43 @@ You can acess the Kanban board that was used during the project development [her
 ## Features
 
 ### Home page
+- Content:
+    - Blog post list
+    - Paginated list of post
+    - Post Title, Summary, Author's name and image, number of likes
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/mainimg.png">
 
 ### Post Page
+- Content:
+    - Post content
+    - Like button and number of comments
+    - Allows the owner of the post to edit or delete the post
+    - Comment field and the posted comments
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/postimg.png">
 
 ### Profile
+- Content:
+    - Username, username picture, biography and his list of post.
+    - Allows the owner of the profile to edit his profile, edit or delete account and change his password.
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/profileimg.png">
 
+### NavBar
 
+- Content:
+    - The Logo, Home page button, register button, user profile button, login or logout button
+    - Welcome user status, which tells which username is logged in.
 
+    <img src="">
+    
 ### Future Features
 
 - Search bar
+    - Could be added so the user can search for the blog topic or user he wants to find
 - Post Categories
+    - Could be added in order to classify the post by it's content.
 
 ## Technologies Used
 
