@@ -60,9 +60,8 @@ Wireframe Blog Post
 <summary>
 Wireframe Profile
 </summary>
-</details>
 <img src="https://github.com/gioZAK/justblog_v1/blob/12b74f02a971a523264797465a0fb4cd9d540569/docs/wireframes/wireframesuserprofile.png">
-
+</details>
 <details>
 <summary>
 Wireframe Post/Edit/Profile
