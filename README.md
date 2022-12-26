@@ -93,8 +93,8 @@ Only the comments require aprove so insults can be avoided.
 
 This project was created using Agile techniques during development, such as:
 
-- User stories: displayed using GitHub Issues,
-- MoSCoW method: by adding tags to each issue,
+- User stories: displayed using GitHub Issues.
+- MoSCoW method: by adding tags to each issue.
 - ToDo, In Progress and Done: using the GitHub Kanban board.
 
 You can acess the Kanban board that was used during the project development [here](https://github.com/users/gioZAK/projects/10/views/1).
@@ -120,12 +120,12 @@ You can acess the Kanban board that was used during the project development [her
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/profileimg.png">
 
-### Owner/Admin Features
 
 
 ### Future Features
 
-
+- Search bar
+- Post Categories
 
 ## Technologies Used
 
@@ -182,13 +182,19 @@ You can acess the Kanban board that was used during the project development [her
 
 ## Credits
 
-### Content
+### Code Institute
+- I have realied on the Code Institute Django Blog Walktrough project in order to make my own.
 
+### Corey Schafer
+- [Corey Schafer Django Course](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
 
-### Media
+### Django For Everybody - Full Python University Course
+- [Django For Everybody - Full Python University Course](https://www.youtube.com/watch?v=o0XbHvKxw7Y&t)
 
+### ChatGPT
+- I have used [ChatGPT](https://chat.openai.com/chat) as a tool to debug and to guide me on how to apply new functionalities.
 
-
-
+### Unslapsh
+- I have taken the images for the blog post from [Unsplash](https://unsplash.com/)
 
 [Back to Table of contents](#table-of-contents)
