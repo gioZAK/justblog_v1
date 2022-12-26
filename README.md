@@ -117,10 +117,13 @@ You can acess the Kanban board that was used during the project development [her
     - Post content
     - Like button and number of comments
     - Allows the owner of the post to edit or delete the post
+    - Display to the blog post viewer an invitation to check on the author's profile
     - Comment field and the posted comments
 
 <img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/postimg.png">
-<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/postimg.png">
+<img src="https://github.com/gioZAK/justblog_v1/blob/24618026b25f9a95213dadada593b2737848f510/docs/screenshots/postimg2.png">
+<img src="https://github.com/gioZAK/justblog_v1/blob/24618026b25f9a95213dadada593b2737848f510/docs/screenshots/postimgowner.png">
+
 
 ### Profile
 - Content:
@@ -135,7 +138,7 @@ You can acess the Kanban board that was used during the project development [her
     - The Logo, Home page button, register button, user profile button, login or logout button
     - Welcome user status, which tells which username is logged in.
 
-    <img src="">
+    <img src="https://github.com/gioZAK/justblog_v1/blob/24618026b25f9a95213dadada593b2737848f510/docs/screenshots/navbar.png">
 
 ### Future Features
 
