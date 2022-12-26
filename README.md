@@ -81,7 +81,8 @@ This project was created using Agile techniques during development, such as:
 - ToDo, In Progress and Done: using the GitHub Kanban board.
 
 You can acess the Kanban board that was used during the project development [here](https://github.com/users/gioZAK/projects/10/views/1).
-![]()
+
+<img src="https://github.com/gioZAK/justblog_v1/blob/befb8792d84f802ab5ff00067eb2213b2a3d7b03/docs/screenshots/kanban.png">
 
 
 
