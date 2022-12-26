@@ -2,7 +2,7 @@
 
 A blog website, created as project to apply and display my current knowledge of front-end techonologies and back-end, using Django. The website, justBlog, is an open blog created to allow any user to express himself, by creating a blog post or commenting on other's user post as well, or just "surf" the blog and read content.
 
-<img src="https://github.com/gioZAK/justblog_v1/blob/8699d06c8842ae9b64362fce183f7e94a3648b32/docs/screenshots/amiresponsive.png>
+<img src="https://github.com/gioZAK/justblog_v1/blob/8699d06c8842ae9b64362fce183f7e94a3648b32/docs/screenshots/amiresponsive.png">
  
  [Click here](https://justblog.herokuapp.com/) to visit the deployed site.
 
