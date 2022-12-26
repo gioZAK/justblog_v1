@@ -105,7 +105,12 @@ You can acess the Kanban board that was used during the project development [her
 
 
 ## Features
-### User Features
+
+### Home page
+
+### Post Page
+
+### Profile
 
 
 ### Owner/Admin Features
