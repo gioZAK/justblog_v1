@@ -110,10 +110,15 @@ You can acess the Kanban board that was used during the project development [her
 
 ### Home page
 
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/mainimg.png">
+
 ### Post Page
+
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/postimg.png">
 
 ### Profile
 
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/features/profileimg.png">
 
 ### Owner/Admin Features
 
@@ -139,7 +144,27 @@ You can acess the Kanban board that was used during the project development [her
 
 ## Validation
 
-https://pep8ci.herokuapp.com/ Python
+
+### Python Testing
+- I have tested all python files and they all passed
+- Tested with [CI pep8](https://pep8ci.herokuapp.com/)
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/testing/testblogview.png">
+
+### JavaScript Testing
+- I have tested the script.js file and it passed with no major error.
+- Tested with [JSHint](https://jshint.com/)
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/testing/jstest.png">
+
+### CSS Testing
+- I have tested the script.css file and it passed.
+- Tested with [Jigsaw](https://jigsaw.w3.org/css-validator/)
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/testing/csstest.png">
+
+### HTML Testing
+- I have tested all templates and they all passed.
+- Tested with [Validator.w3](https://validator.w3.org/nu/#textarea)
+<img src="https://github.com/gioZAK/justblog_v1/blob/92e9029ec1e2024a882a0dbd72e6c9ba246fd48f/docs/testing/htmltest.png">
+
 
 ## Testing
  
